@@ -1,0 +1,66 @@
+{
+	"word cards": [
+		{
+			"card": "animals",
+			"words": ["alpaca","dog","cat","horse","bunny","bear","lion","snake","turtle","giraffe","elephant","kangaroo","chipmunk","deer","pig","cow"],
+			"src": ""
+		},
+		{
+			"card": "fruits",
+			"words": ["apple","pear","banana","grape","cherry","watermelon","mango","blueberry","strawberry","orange","peach","kiwi","dragonfruit","lychee","pineapple","papaya"],
+			"src": ""
+		},
+		{
+			"card": "sports",
+			"words": ["baseball","basketball","hockey","soccer","tennis","volleyball","golf","badminton","bowling","boxing","cycling","swimming","table tennis","surfing","handball","diving"],
+			"src": ""
+		},
+		{
+			"card": "candy",
+			"words": [],
+			"src": ""
+		}
+	],
+	"penalty cards": [
+		{
+			"id": "text",
+			"penalty": "Text your ex",
+			"src": ""
+		},
+		{
+			"id": "call",
+			"penalty": "Call someone",
+			"src": ""
+		},
+		{
+			"id": "buy",
+			"penalty": "Buy pizza for the group",
+			"src": ""
+		},
+		{
+			"id": "keep",
+			"penalty": "Keep 3 ice cubes in your mouth until they melt",
+			"src": ""
+		},
+		{
+			"id": "show",
+			"penalty": "Show the 5th photo on your phone",
+			"src": ""
+		},
+		{
+			"id": "read",
+			"penalty": "Read/show the last message you sent to someone",
+			"src": ""
+		},
+		{
+			"id": "post",
+			"penalty": "Post the oldest selfie on your phone on the social media of your choice",
+			"src": ""
+		},
+		{
+			"id": "lie",
+			"penalty": "What’s the last lie you told?",
+			"src": ""
+		}
+	]
+}

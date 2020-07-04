@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "583801509026",
-    "firebase_url": "https://multiplayer-8dde3.firebaseio.com",
-    "project_id": "multiplayer-8dde3",
-    "storage_bucket": "multiplayer-8dde3.appspot.com"
+    "project_number": "79596425424",
+    "firebase_url": "https://legame-9f34a.firebaseio.com",
+    "project_id": "legame-9f34a",
+    "storage_bucket": "legame-9f34a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:583801509026:android:b4c4dbe552dda5c6eb33fb",
+        "mobilesdk_app_id": "1:79596425424:android:bbdaeca1c06db2b7e7ced5",
         "android_client_info": {
-          "package_name": "com.example.multiplayer"
+          "package_name": "com.example.legame"
         }
       },
       "oauth_client": [
         {
-          "client_id": "583801509026-0mchkoqt947ite2e1fn2ms9a2sqqll0j.apps.googleusercontent.com",
+          "client_id": "79596425424-skaiqsm7eomcjfmsvgecksk2ultjqudm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCBg6fpg9YfbzUe-pTtGb51nJyJK0Aq8HI"
+          "current_key": "AIzaSyCyGta_0hOQ8ZlAMy76PsqP2V-XXNGeUJ0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "583801509026-0mchkoqt947ite2e1fn2ms9a2sqqll0j.apps.googleusercontent.com",
+              "client_id": "79596425424-skaiqsm7eomcjfmsvgecksk2ultjqudm.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
