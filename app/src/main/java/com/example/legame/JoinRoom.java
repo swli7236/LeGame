@@ -48,7 +48,7 @@ public class JoinRoom extends AppCompatActivity {
         roomName = playerName;
 
         listView = findViewById(R.id.ListView);
-        button = findViewById(R.id.button);
+        button = findViewById(R.id.button2);
 
         //all existing available rooms
         roomsList = new ArrayList<>();
