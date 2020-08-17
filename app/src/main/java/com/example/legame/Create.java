@@ -116,10 +116,11 @@ public class Create extends AppCompatActivity {
                     nameRef = database.getReference("rooms/"+roomName+"/player1/name");
                     roleRef = database.getReference("rooms/"+roomName+"/player1/role");
                     cardRef = database.getReference("rooms/"+roomName+"/player1/card");
-                    addCreateEventListener();
                     nameRef.setValue(playerName);
                     roleRef.setValue("");
                     cardRef.setValue("");
+                    addCreateEventListener();
+
                 }
             }
 

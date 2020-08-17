@@ -30,6 +30,7 @@ public class JoinRoom extends AppCompatActivity {
     EditText nameText;
     String roomName = "";
     String playerName = "";
+    int countPlayers=0;
 
     FirebaseDatabase database;
     DatabaseReference roomPlayerRef;
@@ -62,20 +63,39 @@ public class JoinRoom extends AppCompatActivity {
                 playerName = nameText.getText().toString();
                 roomName = roomsList.get(position);
                 roomRef = database.getReference("rooms/"+roomName);
-                roomPlayerRef = database.getReference("rooms/"+roomName+"/player2");
-                nameRef = database.getReference("rooms/"+roomName+"/player2/name");
-                roleRef = database.getReference("rooms/"+roomName+"/player2/role");
-                cardRef = database.getReference("rooms/"+roomName+"/player2/card");
-                addCreateEventListener();
-                nameRef.setValue(playerName);
-                roleRef.setValue("");
-                cardRef.setValue("");
-                //System.out.print(Create.getNumChildren());
+                addRoomEventListener();
+
             }
         });
 
         //show if room available
         addRoomsEventListener();
+    }
+
+    private void addRoomEventListener() {
+
+        roomRef.addListenerForSingleValueEvent(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                countPlayers = (int) snapshot.getChildrenCount() + 1;
+                roomPlayerRef = database.getReference("rooms/"+roomName+"/player"+countPlayers);
+                nameRef = database.getReference("rooms/"+roomName+"/player"+countPlayers+"/name");
+                roleRef = database.getReference("rooms/"+roomName+"/player"+countPlayers+"/role");
+                cardRef = database.getReference("rooms/"+roomName+"/player"+countPlayers+"/card");
+                nameRef.setValue(playerName);
+                roleRef.setValue("");
+                cardRef.setValue("");
+                addCreateEventListener();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                //error
+                Toast.makeText(JoinRoom.this,"Error!", Toast.LENGTH_SHORT).show();
+            }
+
+        });
     }
 
 
