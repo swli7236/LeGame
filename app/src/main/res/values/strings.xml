@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">LeGame</string>
+    <string name="enter_name">Enter your name here</string>
+    <string name="join_room_below">Join a Room Below</string>
+    <string name = "click_button">Click the button when you are ready</string>
+    <string name = "ready">Ready</string>
+    <string name = "players_currently">Players Currently in Room</string>
+    <string name = "room_name">Room Name</string>
+    <string name = "your_name">Your Name</string>
+    <string name = "make_room_priv">Make room private</string>
+    <string name = "room_exists">Room name already exists. Please enter a different room name.</string>
+    <string name = "create">Create</string>
+    <string name = "join_existing">Join Existing Room</string>
+    <string name="create_new">Create New Room</string>
+    <string name = "creating">Creating Room</string>
+    <string name ="waiting">Waiting for other players…</string>
+
 </resources>

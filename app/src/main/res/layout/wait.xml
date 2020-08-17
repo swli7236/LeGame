@@ -7,19 +7,19 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Click the button when you are ready" />
+        android:text="@string/click_button" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ready" />
+        android:text="@string/ready" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Players" />
+        android:text="@string/players_currently" />
 
     <ListView
         android:id="@+id/ListView2"

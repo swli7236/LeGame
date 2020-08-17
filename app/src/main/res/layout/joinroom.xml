@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".JoinRoom">
+    tools:context=".JoinRoom"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/editText9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/enter_name"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/join_room_below" />
 
     <ListView
         android:id="@+id/ListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/button2"
-        android:layout_alignParentTop="true"/>
-    <Button
-        android:id="@+id/button2"
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="CREATE ROOM"/>
-</RelativeLayout>
+        android:layout_height="match_parent" />
+
+</LinearLayout>

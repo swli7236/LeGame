@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -24,16 +24,20 @@ import java.util.List;
 
 public class JoinRoom extends AppCompatActivity {
     ListView listView;
-    Button button;
 
     List<String> roomsList;
 
-    String playerName = "";
+    EditText nameText;
     String roomName = "";
+    String playerName = "";
 
     FirebaseDatabase database;
-    DatabaseReference roomRef;
+    DatabaseReference roomPlayerRef;
     DatabaseReference roomsRef;
+    DatabaseReference roomRef;
+    DatabaseReference nameRef;
+    DatabaseReference roleRef;
+    DatabaseReference cardRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,36 +47,30 @@ public class JoinRoom extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
 
         //get player name and assign room name to player name
-        SharedPreferences preferences = getSharedPreferences("PREFS",0);
-        playerName = preferences.getString("playerName","");
-        roomName = playerName;
 
         listView = findViewById(R.id.ListView);
-        button = findViewById(R.id.button2);
 
         //all existing available rooms
         roomsList = new ArrayList<>();
 
-        button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                button.setText("CREATING ROOM");
-                button.setEnabled(false);
-                roomName = playerName;
-                roomRef = database.getReference("rooms/"+roomName+"/player1");
-                addRoomEventListener();
-                roomRef.setValue(playerName);
-            }
-        });
+        nameText = findViewById(R.id.editText9);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //join existing room and add as player2
+                playerName = nameText.getText().toString();
                 roomName = roomsList.get(position);
-                roomRef = database.getReference("rooms/"+roomName+"/player2");
-                addRoomEventListener();
-                roomRef.setValue(playerName);
+                roomRef = database.getReference("rooms/"+roomName);
+                roomPlayerRef = database.getReference("rooms/"+roomName+"/player2");
+                nameRef = database.getReference("rooms/"+roomName+"/player2/name");
+                roleRef = database.getReference("rooms/"+roomName+"/player2/role");
+                cardRef = database.getReference("rooms/"+roomName+"/player2/card");
+                addCreateEventListener();
+                nameRef.setValue(playerName);
+                roleRef.setValue("");
+                cardRef.setValue("");
+                //System.out.print(Create.getNumChildren());
             }
         });
 
@@ -80,27 +78,7 @@ public class JoinRoom extends AppCompatActivity {
         addRoomsEventListener();
     }
 
-    private void addRoomEventListener(){
-        roomRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //join room
-                button.setText("CREATE ROOM");
-                button.setEnabled(true);
-                Intent intent = new Intent(getApplicationContext(),Start.class);
-                intent.putExtra("roomName",roomName);
-                startActivity(intent);
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                //error
-                button.setText("CREATE ROOM");
-                button.setEnabled(true);
-                Toast.makeText(JoinRoom.this,"Error!", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
     private void addRoomsEventListener(){
         roomsRef = database.getReference("rooms");
         roomsRef.addValueEventListener(new ValueEventListener() {
@@ -120,6 +98,24 @@ public class JoinRoom extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 //error - nothing
+            }
+        });
+    }
+
+    private void addCreateEventListener(){
+        roomPlayerRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //join room
+                Intent intent = new Intent(getApplicationContext(), Wait.class);
+                intent.putExtra("roomName",roomName);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                //error
+                Toast.makeText(JoinRoom.this,"Error!", Toast.LENGTH_SHORT).show();
             }
         });
     }
