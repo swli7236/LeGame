@@ -7,19 +7,19 @@
         android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/room_name"
-        android:autofillHints="" />
+        android:hint="@string/room_name"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/editText6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/your_name"
-        android:autofillHints="" />
+        android:hint="@string/your_name"
+        android:inputType="textPersonName" />
 
     <Switch
         android:id="@+id/switch1"

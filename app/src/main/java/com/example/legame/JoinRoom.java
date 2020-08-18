@@ -22,6 +22,12 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Join Room class allows users to join a room in the game
+ *
+ * @author Sabrina Li and Christina Chau
+ */
+
 public class JoinRoom extends AppCompatActivity {
     ListView listView;
 

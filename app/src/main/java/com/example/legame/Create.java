@@ -18,6 +18,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+/**
+ * Create class that creates a new game
+ *
+ * @author Sabrina Li and Christina Chau
+ */
+
 public class Create extends AppCompatActivity {
     Button createButton;
     EditText nameText;

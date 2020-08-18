@@ -8,6 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import com.google.firebase.database.FirebaseDatabase;
 
+/**
+ * The Home class is deals with the first scene of the game
+ *
+ * @author Sabrina Li and Christina Chau
+ */
+
 public class Home extends AppCompatActivity {
     Button joinButton;
     Button createButton;

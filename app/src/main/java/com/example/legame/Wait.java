@@ -17,6 +17,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
+/**
+ *
+ *
+ * @author Sabrina Li and Christina Chau
+ */
+
 public class Wait extends AppCompatActivity {
 
     Button button;
@@ -34,7 +40,7 @@ public class Wait extends AppCompatActivity {
         button = findViewById(R.id.button3);
         listView = findViewById(R.id.ListView2);
 
-        button.setOnClickListener(new View.OnClickListener(){
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 button.setText(R.string.waiting);
@@ -42,10 +48,9 @@ public class Wait extends AppCompatActivity {
             }
         });
 
-        //addPlayersEventListener();
+        addPlayersEventListener();
     }
 
-    /*
     private void addPlayersEventListener(){
         playersRef = database.getReference("rooms/"+roomName);
         playersRef.addValueEventListener(new ValueEventListener() {
@@ -68,7 +73,5 @@ public class Wait extends AppCompatActivity {
             }
         });
     }
-
-     */
 
 }
