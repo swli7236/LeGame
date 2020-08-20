@@ -48,6 +48,7 @@ public class JoinRoom extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.joinroom);
 
@@ -104,6 +105,11 @@ public class JoinRoom extends AppCompatActivity {
         });
     }
 
+    public int getPlayerNum(){
+        return countPlayers;
+    }
+
+
 
     private void addRoomsEventListener(){
         roomsRef = database.getReference("rooms");
@@ -135,6 +141,7 @@ public class JoinRoom extends AppCompatActivity {
                 //join room
                 Intent intent = new Intent(getApplicationContext(), Wait.class);
                 intent.putExtra("roomName",roomName);
+                intent.putExtra("playerNum", getPlayerNum());
                 startActivity(intent);
             }
 

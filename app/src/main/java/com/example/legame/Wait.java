@@ -27,6 +27,7 @@ public class Wait extends AppCompatActivity {
 
     Button button;
     ListView listView;
+    private int countplayer;
     List<String> playersList;
     String roomName;
 
@@ -51,27 +52,31 @@ public class Wait extends AppCompatActivity {
         addPlayersEventListener();
     }
 
-    private void addPlayersEventListener(){
-        playersRef = database.getReference("rooms/"+roomName);
-        playersRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //show list of players
-                playersList.clear();
-                Iterable<DataSnapshot> rooms = snapshot.getChildren();
-                for(DataSnapshot snap:rooms) {
-                    playersList.add(snap.getKey());
+    public void createPlayersList(){
 
-                    ArrayAdapter<String> adapter = new ArrayAdapter<>(Wait.this, android.R.layout.simple_list_item_1,playersList);
-                    listView.setAdapter(adapter);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                //error - nothing
-            }
-        });
     }
+
+//    private void addPlayersEventListener(){
+//        playersRef = database.getReference("rooms/"+roomName);
+//        playersRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                //show list of players
+//                playersList.clear();
+//                Iterable<DataSnapshot> rooms = snapshot.getChildren();
+//                for(DataSnapshot snap:rooms) {
+//                    playersList.add(snap.getKey());
+//
+//                    ArrayAdapter<String> adapter = new ArrayAdapter<>(Wait.this, android.R.layout.simple_list_item_1,playersList);
+//                    listView.setAdapter(adapter);
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                //error - nothing
+//            }
+//        });
+//    }
 
 }
